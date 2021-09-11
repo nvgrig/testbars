@@ -1,4 +1,4 @@
-INSERT INTO contact (local_date, number, update_date)
+INSERT INTO contract (local_date, number, update_date)
 VALUES ('2021-06-01', '111', '2021-09-11'),
        ('2021-05-01', '222', '2021-08-11'),
        ('2021-04-01', '333', '2021-07-11'),

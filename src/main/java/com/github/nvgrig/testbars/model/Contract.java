@@ -4,8 +4,8 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "contact")
-public class Contact {
+@Table(name = "contract")
+public class Contract {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,10 +20,10 @@ public class Contact {
     @Column(name = "update_date", nullable = false)
     private LocalDate updateDate;
 
-    public Contact() {
+    public Contract() {
     }
 
-    public Contact(Integer id, LocalDate localDate, int number, LocalDate updateDate) {
+    public Contract(Integer id, LocalDate localDate, int number, LocalDate updateDate) {
         this.id = id;
         this.localDate = localDate;
         this.number = number;
