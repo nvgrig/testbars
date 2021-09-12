@@ -1,27 +1,31 @@
 package com.github.nvgrig.testbars.to;
 
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+
 import java.time.LocalDate;
 
 public class ContractTo {
     protected Integer id;
 
-    private LocalDate localDate;
+    private SimpleStringProperty localDate;
 
-    private int number;
+    private SimpleIntegerProperty number;
 
-    private LocalDate updateDate;
+    private SimpleStringProperty updateDate;
 
-    private boolean isActual;
+    private SimpleBooleanProperty isActual;
 
     public ContractTo() {
     }
 
     public ContractTo(Integer id, LocalDate localDate, int number, LocalDate updateDate, boolean isActual) {
         this.id = id;
-        this.localDate = localDate;
-        this.number = number;
-        this.updateDate = updateDate;
-        this.isActual = isActual;
+        this.localDate = new SimpleStringProperty(localDate.toString());
+        this.number = new SimpleIntegerProperty(number);
+        this.updateDate = new SimpleStringProperty(updateDate.toString());
+        this.isActual = new SimpleBooleanProperty(isActual);
     }
 
     public Integer getId() {
@@ -32,36 +36,36 @@ public class ContractTo {
         this.id = id;
     }
 
-    public LocalDate getLocalDate() {
-        return localDate;
+    public String getLocalDate() {
+        return localDate.get();
     }
 
     public void setLocalDate(LocalDate localDate) {
-        this.localDate = localDate;
+        this.localDate.set(localDate.toString());
     }
 
     public int getNumber() {
-        return number;
+        return number.get();
     }
 
     public void setNumber(int number) {
-        this.number = number;
+        this.number.set(number);
     }
 
-    public LocalDate getUpdateDate() {
-        return updateDate;
+    public String getUpdateDate() {
+        return updateDate.get();
     }
 
     public void setUpdateDate(LocalDate updateDate) {
-        this.updateDate = updateDate;
+        this.updateDate.set(updateDate.toString());
     }
 
     public boolean isActual() {
-        return isActual;
+        return isActual.get();
     }
 
     public void setActual(boolean actual) {
-        isActual = actual;
+        isActual.set(actual);
     }
 
     @Override
